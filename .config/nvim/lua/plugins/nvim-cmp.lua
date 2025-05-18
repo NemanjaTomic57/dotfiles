@@ -121,7 +121,7 @@ return {
                     end
                 end
             end
-            
+
             vim.api.nvim_feedkeys(keys, 'nt', true)
         end
 
@@ -198,7 +198,7 @@ return {
 
         cmp.setup({
             experimental = {
-                -- HACK: experimenting with ghost text 
+                -- HACK: experimenting with ghost text
                 -- look at `toggle_ghost_test()` function below.
                 ghost_text = true,
             },
@@ -235,7 +235,7 @@ return {
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
                 ['<C-b'] = cmp.mapping.abort(),
-                
+
                 ['<C-n>'] = cmp.mapping(select_next_item),
                 ['<C-p>'] = cmp.mapping(select_prev_item),
                 ['<Down>'] = cmp.mapping(select_next_item),
@@ -250,14 +250,14 @@ return {
                     end
                 end, { 'i', 's' }),
 
-                ['<CR>'] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        local entry = cmp.get_selected_entry()
-                        confirm(entry)
-                    else
-                        fallback()
-                    end
-                end, { 'i', 's' }),
+                -- ['<CR>'] = cmp.mapping(function(fallback)
+                --     if cmp.visible() then
+                --         local entry = cmp.get_selected_entry()
+                --         confirm(entry)
+                --     else
+                --         fallback()
+                --     end
+                -- end, { 'i', 's' }),
 
                 ['<S-Tab>'] = cmp.mapping(function(fallback)
                     if cmp.visible() then
@@ -306,7 +306,7 @@ return {
                         latex_symbols = '[LaTeX]',
                     })[entry.source.name]
 
-                    -- use lspkind and tailwindcss-colorizer-cmp for additional formatting 
+                    -- use lspkind and tailwindcss-colorizer-cmp for additional formatting
                     vim_item = lspkind.cmp_format({
                         maxwidth = 30,
                         ellipsis_char = '...',
@@ -316,9 +316,9 @@ return {
                         vim_item = colorizer(entry, vim_item)
                     end
 
-                    return vim_item 
+                    return vim_item
 
-                end 
+                end
             }
         })
 
@@ -329,8 +329,8 @@ return {
 
         local config = require('cmp.config')
         local toggle_ghost_text = function()
-            if vim.api.nvim_get_mode().mode ~= 'i' then 
-                return 
+            if vim.api.nvim_get_mode().mode ~= 'i' then
+                return
             end
 
             local cursor_column = vim.fn.col('.')
@@ -340,14 +340,14 @@ return {
             local should_enable_ghost_text = character_after_cursor == '' or vim.fn.match(character_after_cursor, [[\k]]) == -1
 
             local current = config.get().experimental.ghost_text
-            if current ~= should_enable_ghost_text then 
+            if current ~= should_enable_ghost_text then
                 config.set_global({
                     experimental = {
                         ghost_text = should_enable_ghost_text,
                     },
                 })
-            end 
-        end 
+            end
+        end
 
         vim.api.nvim_create_autocmd({ 'InsertEnter', 'CursorMovedI' }, {
             callback = toggle_ghost_text,

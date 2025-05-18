@@ -34,8 +34,9 @@ return{
                     'gitignore',
                     'query',
                     'vimdoc',
-                    'c',
                     'c_sharp',
+                    'php',
+                    'regex',
                 },
                 incremental_selection = {
                     enable = true,

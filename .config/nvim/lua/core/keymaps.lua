@@ -33,7 +33,7 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "x", '"_x', opts)
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word cursor is on globally" })
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "makes file executable" })
+-- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "makes file executable" })
 
 -- Highlight yank
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -47,8 +47,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- tab stuff
 vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>")    -- open new tab
 vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>")  -- close current tab
-vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>")      -- go to next
-vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>")      -- go to pre
+vim.keymap.set("n", "<Tab>", "<cmd>tabn<CR>")      -- go to next
+vim.keymap.set("n", "<S-Tab>", "<cmd>tabp<CR>")      -- go to pre
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>")  -- open current tab in new tab
 
 -- split
@@ -70,3 +70,13 @@ vim.keymap.set("n", "<leader>fp", function()
     vim.fn.setreg("+", filePath)
     print("File path copied to clipboard: " .. filePath)
 end, { desc = "Copy file path to clipboard" })
+
+-- Toggle LSP diagnostics visibility
+local isLspDianosticsVisible = true
+vim.keymap.set('n', '<leader>lx', function()
+    isLspDianosticsVisible = not isLspDianosticsVisible
+    vim.diagnostic.config({
+        virtual_text = isLspDianosticsVisible,
+        underline = isLspDianosticsVisible
+    })
+end, { desc = 'Toggle LSP diagnostics' })
