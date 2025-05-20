@@ -44,7 +44,7 @@ return {
                             min_height = 10,
                             box = "vertical",
                             title = "{title}",
-                            title_pos = center,
+                            title_pos = 'center',
                             { win = "input", height = 1, border = "bottom" },
                             { win = "list", border = "none" },
                             { win = "preview", title = "{preview}", width = 0.6, height = 0.4, border = "top" },

@@ -7,7 +7,7 @@ return {
         config = function()
             local nvchadcolorizer = require('colorizer')
             local tailwindcolorizer = require('tailwindcss-colorizer-cmp')
-            
+
             nvchadcolorizer.setup({
                 user_default_options = {
                     tailwind = true,

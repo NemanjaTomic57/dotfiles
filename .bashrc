@@ -12,8 +12,8 @@ PS1='[\u@\h \W]\$ '
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias open='xdg-open'
-alias restartwg='sudo systemctl restart wg-quick@wg0'
-alias workspace='cd ~/desktop/workspace'
+alias wgrestart='sudo systemctl restart wg-quick@wg0'
+alias workspace='cd ~/Desktop/workspace'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
