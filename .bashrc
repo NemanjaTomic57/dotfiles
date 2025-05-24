@@ -5,15 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
-
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-alias open='xdg-open'
-alias wgrestart='sudo systemctl restart wg-quick@wg0'
-alias workspace='cd ~/Desktop/workspace'
+# Export binaries
+export PATH="$HOME/Desktop/scripts/sh:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -36,6 +30,18 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
+
+# Aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias workspace='cd ~/Desktop/workspace'
+alias open='xdg-open'
+alias wgrestart='sudo systemctl restart wg-quick@wg0'
+alias qemu='qemu-system-x86_64'
 
 if [ -f "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
