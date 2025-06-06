@@ -37,6 +37,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"pyright",
+                "rust_analyzer",
 				"html",
 				"cssls",
 				"tailwindcss",

@@ -3,6 +3,7 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.api.nvim_set_keymap("n", "<C-S>", ":wa<CR>", opts)
 vim.keymap.set("i", "jk", "<Esc>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })

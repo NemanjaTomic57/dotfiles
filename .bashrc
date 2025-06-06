@@ -5,8 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Export binaries
+# Custom bash scripts
 export PATH="$HOME/Desktop/scripts/sh:$PATH"
+# Composer for PHP
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # >>> conda initialize >>>

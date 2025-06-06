@@ -105,9 +105,42 @@ return {
 			capabilities = capabilities,
 		})
 
+        lspconfig.rust_analyzer.setup({
+            capabilities = capabilities,
+        })
+
 		lspconfig.ts_ls.setup({
 			capabilities = capabilities,
 		})
+
+        lspconfig.html.setup({
+            capabilities = capabilities,
+        })
+
+        lspconfig.cssls.setup({
+            capabilities = capabilities,
+            settings = {
+                css = {
+                    lint = {
+                        unknownAtRules = "ignore",
+                    },
+                },
+                scss = {
+                    lint = {
+                        unknownAtRules = "ignore",
+                    },
+                },
+                less = {
+                    lint = {
+                        unknownAtRules = "ignore",
+                    },
+                },
+            }
+        })
+
+        lspconfig.tailwindcss.setup({
+            capabilities = capabilities,
+        })
 
 		lspconfig.emmet_ls.setup({
 			capabilities = capabilities,
@@ -146,6 +179,7 @@ return {
 		})
 
 		lspconfig.intelephense.setup({
+            capabilities = capabilities,
 			settings = {
 				intelephense = {
 					environment = {
@@ -155,81 +189,6 @@ return {
 						maxSize = 5000000,
 					},
 					stubs = {
-						"apache",
-						"bcmath",
-						"bz2",
-						"calendar",
-						"com_dotnet",
-						"Core",
-						"ctype",
-						"curl",
-						"date",
-						"dba",
-						"dom",
-						"enchant",
-						"exif",
-						"fileinfo",
-						"filter",
-						"fpm",
-						"ftp",
-						"gd",
-						"gettext",
-						"gmp",
-						"hash",
-						"iconv",
-						"imap",
-						"intl",
-						"json",
-						"ldap",
-						"libxml",
-						"mbstring",
-						"meta",
-						"mcrypt",
-						"mysqli",
-						"oci8",
-						"odbc",
-						"openssl",
-						"pcntl",
-						"pcre",
-						"PDO",
-						"pdo_ibm",
-						"pdo_mysql",
-						"pdo_pgsql",
-						"pdo_sqlite",
-						"pgsql",
-						"Phar",
-						"posix",
-						"pspell",
-						"readline",
-						"recode",
-						"Reflection",
-						"regex",
-						"session",
-						"shmop",
-						"SimpleXML",
-						"snmp",
-						"soap",
-						"sockets",
-						"sodium",
-						"SPL",
-						"sqlite3",
-						"standard",
-						"superglobals",
-						"sybase",
-						"sysvmsg",
-						"sysvsem",
-						"sysvshm",
-						"tidy",
-						"tokenizer",
-						"xml",
-						"xmlreader",
-						"xmlrpc",
-						"xmlwriter",
-						"Zend OPcache",
-						"zip",
-						"zlib",
-						"wordpress",
-						"xdebug",
 						"laravel",
 					},
 				},
