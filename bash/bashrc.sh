@@ -1,0 +1,1 @@
+/home/nemo/.oh-my-bash/custom/bashrc.sh
