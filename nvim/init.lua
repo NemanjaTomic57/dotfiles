@@ -1,1 +1,3 @@
-/home/nemo/.config/nvim/init.lua
+require("core")
+require("config.lazy")
+
