@@ -1,0 +1,10 @@
+[Unit]
+Description=OneDrive Syncronization
+After=network.target
+
+[Service]
+ExecStart=onedrive --monitor
+Type=simple
+
+[Install]
+WantedBy=default.target
