@@ -41,3 +41,6 @@ export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 if [ -f "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
 fi
+
+export PATH="$HOME/Desktop/scripts/shell/bin:$PATH"
+
