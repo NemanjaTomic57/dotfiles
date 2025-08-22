@@ -12,14 +12,8 @@ alias ls='ls --color=auto'
 # Custom aliases
 alias grep='grep --color=auto'
 alias open='xdg-open'
-
-# Kubernetes aliases
-alias k='kubectl'
-alias kgp='kubectl get pods'
-alias kdr='kubectl --dry-run=client'
-alias kgs='kubectl get svc'
-alias kdesc='kubectl describe'
-alias kga='kubectl get all'
+alias sc='cd ~/Desktop/scripts/shell/bin/'
+alias ws='cd ~/Desktop/workspace/'
 
 # Composer for PHP
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
@@ -42,5 +36,5 @@ if [ -f "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
 fi
 
-export PATH="$HOME/Desktop/scripts/shell/bin:$PATH"
-
+# Custom shell scripts 
+export PATH="$HOME/Desktop/scripts/shell/bin/:$PATH"
