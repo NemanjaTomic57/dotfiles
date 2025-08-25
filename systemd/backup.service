@@ -1,0 +1,6 @@
+[Unit]
+Description=Backup home directory
+
+[Service]
+Type=oneshot
+ExecStart=/home/nemo/Desktop/scripts/shell/bin/backup-linux /dev/sda1
