@@ -44,7 +44,6 @@ return {
 				lua = { "stylua" },
 				json = { "prettier" },
 				yaml = { "prettier" },
-				markdown = { "prettier" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
