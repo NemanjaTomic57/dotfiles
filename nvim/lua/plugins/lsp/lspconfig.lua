@@ -105,42 +105,38 @@ return {
 			capabilities = capabilities,
 		})
 
-        lspconfig.rust_analyzer.setup({
-            capabilities = capabilities,
-        })
-
-		lspconfig.ts_ls.setup({
+		lspconfig.rust_analyzer.setup({
 			capabilities = capabilities,
 		})
 
-        lspconfig.html.setup({
-            capabilities = capabilities,
-        })
+		lspconfig.html.setup({
+			capabilities = capabilities,
+		})
 
-        lspconfig.cssls.setup({
-            capabilities = capabilities,
-            settings = {
-                css = {
-                    lint = {
-                        unknownAtRules = "ignore",
-                    },
-                },
-                scss = {
-                    lint = {
-                        unknownAtRules = "ignore",
-                    },
-                },
-                less = {
-                    lint = {
-                        unknownAtRules = "ignore",
-                    },
-                },
-            }
-        })
+		lspconfig.cssls.setup({
+			capabilities = capabilities,
+			settings = {
+				css = {
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+				scss = {
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+				less = {
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+			},
+		})
 
-        lspconfig.tailwindcss.setup({
-            capabilities = capabilities,
-        })
+		lspconfig.tailwindcss.setup({
+			capabilities = capabilities,
+		})
 
 		lspconfig.emmet_ls.setup({
 			capabilities = capabilities,
@@ -152,6 +148,10 @@ return {
 				"php",
 				"blade",
 			},
+		})
+
+		lspconfig.ts_ls.setup({
+			capabilities = capabilities,
 		})
 
 		lspconfig.emmet_language_server.setup({
@@ -179,7 +179,7 @@ return {
 		})
 
 		lspconfig.intelephense.setup({
-            capabilities = capabilities,
+			capabilities = capabilities,
 			settings = {
 				intelephense = {
 					environment = {

@@ -7,6 +7,5 @@
         }
     ],
     "editor.fontFamily": "DejaVu Sans Mono",
-    "editor.fontSize": 14,
-    "git.confirmSync": false
+    "editor.fontSize": 14
 }
