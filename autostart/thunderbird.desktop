@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Thunderbird
+Exec=thunderbird
+X-GNOME-Autostart-enabled=true
+

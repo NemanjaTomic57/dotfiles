@@ -90,11 +90,6 @@ smtpd_tls_key_file = /etc/letsencrypt/live/tonit.dev/privkey.pem
 # SMTP Server security level: none|may|encrypt
 smtpd_tls_security_level = encrypt
 
-# Configure Postfix for DKIM
-milter_default_action = accept
-smtpd_milters = inet:localhost:8891
-non_smtpd_milters = inet:localhost:8891
-
 # Configure Postfix for SASL with Dovecot
 smtpd_sasl_type = dovecot
 smtpd_sasl_path = private/auth

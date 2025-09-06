@@ -73,33 +73,14 @@ sudo ufw reload
 
 
 # Step 7: DKIM configuration
-sudo apt install opendkim opendkim-tools -y
-sudo vim /etc/opendkim.conf
-
-# Generate DKIM Keys
-sudo mkdir -p /etc/dkimkeys
-cd /etc/dkimkeys
-sudo opendkim-genkey -s mail -d tonit.dev
-sudo chown opendkim:opendkim mail.private
-
-# Configure KeyTable, SigningTable, TrustedHosts
-# /etc/opendkim/KeyTable
-mail._domainkey.tonit.dev tonit.dev:mail:/etc/dkimkeys/mail.private
-# /etc/opendkim/SigningTable
-*@tonit.dev mail._domainkey.tonit.dev
-# /etc/opendkim/TrustedHosts
-127.0.0.1
-localhost
-*.tonit.dev
+# For this, please take a look at this blog post:
+# https://tecadmin.net/setup-dkim-with-postfix-on-ubuntu-debian/
 
 sudo systemctl enable opendkim
 sudo systemctl restart opendkim
 sudo systemctl restart postfix
 
-# Set DNS Record
-mail._domainkey IN TXT ( "v=DKIM1; k=rsa; p=MIIBIjANBgkqh..." ) ; # DKIM key mail for tonit.dev
-
 # Test email delivery
 sudo apt install mailutils
-echo "This is a test email" | mail -aFrom:debian@tonit.dev -s "Test Email" test-qk5ykkekv@srv1.mail-tester.com
+echo "This is a test email" | mail -aFrom:debian@tonit.dev -s "Test Email" test-ftzy5eilb@srv1.mail-tester.com
 
