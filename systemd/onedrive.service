@@ -5,6 +5,7 @@ After=network-online.target
 
 [Service]
 ExecStart=/usr/bin/onedrive --monitor
+User=nemo
 Restart=on-failure
 RestartSec=3
 

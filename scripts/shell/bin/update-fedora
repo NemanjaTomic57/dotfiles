@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+# 1. Update the package metadata
+sudo dnf check-update
+
+# 2. Perform a full system upgrade (updates all installed packages)
+sudo dnf upgrade --refresh -y
+
+# 3. Optionally, remove no-longer-needed dependencies
+sudo dnf autoremove -y
+
+# 4. Clean up all cached data
+sudo dnf clean all
+
+# 5. Rebuild the package metadata cache (optional but useful)
+sudo dnf makecache

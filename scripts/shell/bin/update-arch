@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+
+echo "=== Updating system packages (pacman) ==="
+sudo pacman -Syu --noconfirm
+
+echo "=== Updating AUR packages (yay) ==="
+yay -Sua --noconfirm
+
+echo "=== Removing orphaned packages ==="
+sudo pacman -Rns --noconfirm $(pacman -Qtdq || echo "none")
+
+echo "=== Clearing package caches (pacman) ==="
+sudo pacman -Scc --noconfirm
+
+echo "=== Clearing yay cache ==="
+yay -Scc --noconfirm
+
+echo "=== Done! System fully upgraded and caches cleared. ==="
+
