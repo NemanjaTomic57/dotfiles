@@ -12,7 +12,7 @@ alias ls='ls --color=auto'
 # Custom aliases
 alias grep='grep --color=auto'
 alias open='xdg-open'
-alias sc='cd ~/Desktop/scripts/shell/bin/'
+alias sc='cd ~/Desktop/dotfiles/scripts/shell/bin/'
 alias ws='cd ~/Desktop/workspace/'
 
 # Composer for PHP
