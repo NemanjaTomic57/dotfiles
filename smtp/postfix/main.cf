@@ -82,6 +82,7 @@ inet_interfaces = all
 # ----- CUSTOMS ------
 myhostname = tonit.dev
 smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
+message_size_limit = 52428800
 
 # TLS
 # SMTP server RSA key and certificate in PEM format

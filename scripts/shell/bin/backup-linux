@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Ensure the script is run as root
+if [ "$EUID" -ne 0 ]; then
+    echo "This script must be run with sudo or as root."
+    exit 1
+fi
+
+# Check if device for backup is passed
+if [ -z "$1" ]; then
+    echo "Usage: $0 backup_device"
+    exit 1
+fi
+
+backup_device="$1"
+backup_folder="/mnt/backups"
+
+umount $backup_folder
+
+# Ensure the mount point exists
+if [ ! -e "$backup_device" ]; then
+    echo "Error: Device $backup_device does not exist."
+    exit 1
+fi
+
+mkdir -p "$backup_folder"
+
+mount "$backup_device" "$backup_folder" || { echo "Error: Failed to mount $backup_device"; exit 1; }
+
+rsync -a --delete --info=progress2 \
+    --exclude='.*' \
+    /home/nemo/ "$backup_folder/home"
+
+echo "Home folder backed up. Unmounting backup device ..."
+
+umount "$backup_device"
+
+echo "Backup completed."

@@ -37,4 +37,4 @@ if [ -f "$HOME/.bashrc.local" ]; then
 fi
 
 # Custom shell scripts 
-export PATH="$HOME/Desktop/scripts/shell/bin/:$PATH"
+export PATH="$HOME/Desktop/dotfiles/scripts/shell/bin/:$PATH"
