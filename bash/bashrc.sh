@@ -14,6 +14,7 @@ alias grep='grep --color=auto'
 alias open='xdg-open'
 alias sc='cd ~/Desktop/dotfiles/scripts/shell/bin/'
 alias ws='cd ~/Desktop/workspace/'
+alias postman="~/Desktop/Postman/Postman"
 
 # Composer for PHP
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
@@ -35,6 +36,9 @@ export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 if [ -f "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
 fi
+
+# Add .NET Core SDK tools
+export PATH="$PATH:/home/nemo/.dotnet/tools"
 
 # Custom shell scripts 
 export PATH="$HOME/Desktop/dotfiles/scripts/shell/bin/:$PATH"

@@ -4,6 +4,11 @@
         {
             "before": ["j", "k"],
             "after": ["<Esc>"]
+        },
+        {
+            "key": "ctrl+e",
+            "command": "-vim.remap", // removes Vim's mapping for Ctrl+E
+            "when": "editorTextFocus && vim.active && !inDebugRepl"
         }
     ],
     "editor.fontFamily": "DejaVu Sans Mono",
