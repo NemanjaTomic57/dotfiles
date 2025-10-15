@@ -8,16 +8,15 @@ return {
             formatters = {
                 prettier = {
                     command = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        "$FILENAME",
-                        "--tab-width",
-                        "4",
-                        "--use-tabs",
-                        "false",
-                    },
-                    stdin = true,
-                    timeout_ms = 5000
+                    args = function(ctx)
+                        if ctx.filename:match("%.ya?ml$") then
+                            return { "--stdin-filepath", "$FILENAME", "--tab-width", "2", "--use-tabs", "false" }
+                        elseif ctx.filename:match("%.tf$") then
+                            return { "--stdin-filepath", "$FILENAME", "--tab-width", "2", "--use-tabs", "false" }
+                        else
+                            return { "--stdin-filepath", "$FILENAME", "--tab-width", "4", "--use-tabs", "false" }
+                        end
+                    end,
                 },
                 php_cs_fixer = {
                     command = "php-cs-fixer",
@@ -26,11 +25,6 @@ return {
                     env = {
                         PHP_CS_FIXER_IGNORE_ENV = "1",
                     },
-                },
-                blade_formatter = {
-                    command = "blade-formatter",
-                    args = { "--stdin" },
-                    stdin = true,
                 },
             },
             formatters_by_ft = {
@@ -41,7 +35,6 @@ return {
                 css = { "prettier" },
                 html = { "prettier" },
                 php = { "php_cs_fixer" },
-                blade = { "blade_formatter" },
                 lua = { "stylua" },
                 json = { "prettier" },
             },
