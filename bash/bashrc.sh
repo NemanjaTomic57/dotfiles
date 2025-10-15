@@ -15,6 +15,7 @@ alias open='xdg-open'
 alias sc='cd ~/Desktop/dotfiles/scripts/shell/bin/'
 alias ws='cd ~/Desktop/workspace/'
 alias postman="~/Desktop/Postman/Postman"
+alias k="kubectl"
 
 # Composer for PHP
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
