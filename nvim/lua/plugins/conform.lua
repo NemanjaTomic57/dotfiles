@@ -9,9 +9,10 @@ return {
                 prettier = {
                     command = "prettier",
                     args = function(ctx)
-                        if ctx.filename:match("%.ya?ml$") then
+                        local filename = ctx.filename or ctx.bufname or ""
+                        if filename:match("%.ya?ml$") then
                             return { "--stdin-filepath", "$FILENAME", "--tab-width", "2", "--use-tabs", "false" }
-                        elseif ctx.filename:match("%.tf$") then
+                        elseif filename:match("%.tf$") then
                             return { "--stdin-filepath", "$FILENAME", "--tab-width", "2", "--use-tabs", "false" }
                         else
                             return { "--stdin-filepath", "$FILENAME", "--tab-width", "4", "--use-tabs", "false" }

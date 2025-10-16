@@ -41,5 +41,8 @@ fi
 # Add .NET Core SDK tools
 export PATH="$PATH:/home/nemo/.dotnet/tools"
 
+# Terraform autocompletion
+complete -C /usr/bin/terraform terraform
+
 # Custom shell scripts 
 export PATH="$HOME/Desktop/dotfiles/scripts/shell/bin/:$PATH"

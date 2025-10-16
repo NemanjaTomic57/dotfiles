@@ -76,12 +76,11 @@ return {
         })
 
         -- Setup servers
-        local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
         -- Config lsp servers here
-        lspconfig.lua_ls.setup({
+        vim.lsp.config("lua_ls", {
             capabilities = capabilities,
             settings = {
                 Lua = {
@@ -101,19 +100,19 @@ return {
             },
         })
 
-        lspconfig.pyright.setup({
+        vim.lsp.config("pyright", {
             capabilities = capabilities,
         })
 
-        lspconfig.rust_analyzer.setup({
+        vim.lsp.config("rust_analyzer", {
             capabilities = capabilities,
         })
 
-        lspconfig.html.setup({
+        vim.lsp.config("html", {
             capabilities = capabilities,
         })
 
-        lspconfig.cssls.setup({
+        vim.lsp.config("cssls", {
             capabilities = capabilities,
             settings = {
                 css = {
@@ -134,11 +133,11 @@ return {
             },
         })
 
-        lspconfig.tailwindcss.setup({
+        vim.lsp.config("tailwindcss", {
             capabilities = capabilities,
         })
 
-        lspconfig.emmet_ls.setup({
+        vim.lsp.config("emmet_ls", {
             capabilities = capabilities,
             filetypes = {
                 "html",
@@ -149,11 +148,11 @@ return {
             },
         })
 
-        lspconfig.ts_ls.setup({
+        vim.lsp.config("ts_ls", {
             capabilities = capabilities,
         })
 
-        lspconfig.emmet_language_server.setup({
+        vim.lsp.config("emmet_language_server", {
             capabilities = capabilities,
             filetypes = {
                 "css",
@@ -176,7 +175,7 @@ return {
             },
         })
 
-        lspconfig.intelephense.setup({
+        vim.lsp.config("intelephense", {
             capabilities = capabilities,
             settings = {
                 intelephense = {
@@ -193,7 +192,7 @@ return {
             },
         })
 
-        lspconfig.terraformls.setup({
+        vim.lsp.config("terraformls", {
             capabilities = capabilities,
         })
     end,
