@@ -44,7 +44,6 @@ return {
                 "ts_ls",
                 "emmet_ls",
                 "emmet_language_server",
-                "intelephense",
                 "terraformls",
             },
         })
