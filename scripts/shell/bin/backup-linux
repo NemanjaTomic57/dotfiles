@@ -15,8 +15,6 @@ fi
 backup_device="$1"
 backup_folder="/mnt/backups"
 
-umount $backup_folder
-
 # Ensure the mount point exists
 if [ ! -e "$backup_device" ]; then
     echo "Error: Device $backup_device does not exist."
@@ -31,8 +29,4 @@ rsync -a --delete --info=progress2 \
     --exclude='.*' \
     /home/nemo/ "$backup_folder/home"
 
-echo "Home folder backed up. Unmounting backup device ..."
-
-umount "$backup_device"
-
-echo "Backup completed."
+echo "Home folder backed up. Please unmount backup device."

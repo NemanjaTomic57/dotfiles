@@ -36,14 +36,15 @@ return {
             -- servers for mason to install
             ensure_installed = {
                 "lua_ls",
-                "pyright",
-                "rust_analyzer",
                 "html",
                 "cssls",
                 "tailwindcss",
                 "ts_ls",
                 "emmet_ls",
                 "emmet_language_server",
+                "pyright",
+                "rust_analyzer",
+                "gopls",
                 "terraformls",
             },
         })

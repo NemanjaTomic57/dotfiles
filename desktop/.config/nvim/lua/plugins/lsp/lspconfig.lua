@@ -76,7 +76,6 @@ return {
         })
 
         -- Setup servers
-        local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -103,7 +102,6 @@ return {
                 },
             },
         })
-        vim.lsp.enable('lua_ls')
 
         vim.lsp.config('cssls', {
             settings = {
@@ -125,14 +123,28 @@ return {
             },
         })
 
-        vim.lsp.enable('html')
+        vim.lsp.config('gopls', {
+            settings = {
+                gopls = {
+                    analyses = {
+                        unusedparams = true,
+                    },
+                    staticcheck = true,
+                    gofumpt = true,
+                },
+            },
+        })
+
+        vim.lsp.enable('lua_ls')
         vim.lsp.enable('cssls')
+        vim.lsp.enable('html')
         vim.lsp.enable('tailwindcss')
         vim.lsp.enable('emmet_ls')
         vim.lsp.enable('emmet_language_server')
         vim.lsp.enable('ts_ls')
         vim.lsp.enable('pyright')
         vim.lsp.enable('rust_analyzer')
+        vim.lsp.enable('gopls')
         vim.lsp.enable('terraformls')
     end,
 }

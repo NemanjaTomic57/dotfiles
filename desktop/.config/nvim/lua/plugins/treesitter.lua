@@ -6,7 +6,7 @@ return {
         config = function()
             -- import nvim-treesitter plugin
             local treesitter = require("nvim-treesitter.configs")
-            local treesitter_parsers = require("nvim-treesitter.parsers")
+            -- local treesitter_parsers = require("nvim-treesitter.parsers")
 
             -- configure treesitter
             treesitter.setup({
@@ -18,18 +18,18 @@ return {
                 -- ensure these languages parsers are installed
                 ensure_installed = {
                     "lua",
-                    "python",
-                    "javascript",
-                    "typescript",
-                    "tsx",
-                    "yaml",
-                    "html",
-                    "css",
-                    "php",
                     "json",
                     "markdown",
                     "bash",
                     "regex",
+                    "html",
+                    "css",
+                    "javascript",
+                    "typescript",
+                    "tsx",
+                    "yaml",
+                    "python",
+                    "go",
                 },
                 incremental_selection = {
                     enable = true,

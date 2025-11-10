@@ -46,3 +46,6 @@ complete -C /usr/bin/terraform terraform
 
 # Custom shell scripts 
 export PATH="$HOME/Desktop/dotfiles/scripts/shell/bin/:$PATH"
+ 
+# Golang
+export PATH="$PATH:/usr/local/go/bin:/home/nemo/go/bin"
