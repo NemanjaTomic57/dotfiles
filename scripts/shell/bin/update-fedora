@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 # 1. Update the package metadata
 sudo dnf check-update
