@@ -26,7 +26,6 @@ mkdir -p "$backup_folder"
 mount "$backup_device" "$backup_folder" || { echo "Error: Failed to mount $backup_device"; exit 1; }
 
 rsync -a --delete --info=progress2 \
-    --exclude='.*' \
     /home/nemo/ "$backup_folder/home"
 
 echo "Home folder backed up. Please unmount backup device."
