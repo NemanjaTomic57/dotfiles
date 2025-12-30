@@ -12,17 +12,6 @@ return {
 						"--stdin-filepath",
 						"$FILENAME",
 						"--tab-width",
-						"4",
-						"--use-tabs",
-						"false",
-					},
-				},
-				prettier_yaml = {
-					command = "prettier",
-					args = {
-						"--stdin-filepath",
-						"$FILENAME",
-						"--tab-width",
 						"2",
 						"--use-tabs",
 						"false",
@@ -48,9 +37,9 @@ return {
 				lua = { "stylua" },
 				json = { "prettier" },
 
-				yaml = { "prettier_yaml" },
-				yml = { "prettier_yaml" },
-				tf = { "prettier_yaml" },
+				yaml = { "prettier" },
+				yml = { "prettier" },
+				tf = { "prettier" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
