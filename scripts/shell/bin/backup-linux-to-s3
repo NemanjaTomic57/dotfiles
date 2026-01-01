@@ -1,0 +1,10 @@
+#!/bin/bash 
+
+aws s3 sync /home/nemo/ s3://XXX/home/ \
+    --delete \
+    --exclude "**/node_modules/*" \
+    --exclude ".local/*" \
+    --exclude ".cache/*" \
+    --exclude ".rustup/*" \
+    --storage-class STANDARD_IA \
+    --progress
